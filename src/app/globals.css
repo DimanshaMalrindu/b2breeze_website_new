@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: 6 10 22; /* #0b0f16 */
+  --fg: 229 231 235; /* neutral-200 */
+  --muted: 148 163 184; /* slate-400 */
+  --accent: 99 102 241; /* indigo-500 */
+  --accent-2: 20 184 166; /* teal-500 */
+  --accent-3: 236 72 153; /* pink-500 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Color utility classes mapped to CSS variables */
+.bg-base { background-color: rgb(var(--bg)); }
+.text-foreground { color: rgb(var(--fg)); }
+.text-muted { color: rgb(var(--muted)); }
+.text-accent { color: rgb(var(--accent)); }
+.text-accent-2 { color: rgb(var(--accent-2)); }
+.text-accent-3 { color: rgb(var(--accent-3)); }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Smooth font rendering */
+html { text-rendering: optimizeLegibility; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(99,102,241,.15), transparent 50%),
+              radial-gradient(800px 600px at 10% 10%, rgba(20,184,166,.12), transparent 50%),
+              radial-gradient(900px 700px at 50% 120%, rgba(236,72,153,.08), transparent 50%),
+              rgb(var(--bg));
+  color: rgb(var(--fg));
 }
+
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  backdrop-filter: saturate(160%) blur(16px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 60%, transparent 80%);
+  mask-image: radial-gradient(ellipse at 50% 50%, black 60%, transparent 80%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.shimmer {
+  background: linear-gradient(110deg, rgba(255,255,255,.06), rgba(255,255,255,.12), rgba(255,255,255,.06));
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.noisy {
+  position: relative;
+}
+.noisy::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Lenis smooth scroll base styles are JS-managed; ensure body is overflow: auto */
+html.lenis, html.lenis body { height: auto; }
+html.lenis:not(.lenis-smooth) { scroll-behavior: auto; }
+html.lenis.lenis-smooth { scroll-behavior: auto; }
+body.lenis { overflow: auto; }
+body.lenis.lenis-smooth { overflow: hidden; }
