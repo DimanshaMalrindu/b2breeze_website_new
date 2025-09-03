@@ -8,10 +8,12 @@ import { useSearchParams } from "next/navigation";
 import { Events, trackEvent } from "@/lib/analytics";
 
 const links = [
-    { href: "#features", label: "Features" },
-    { href: "#solutions", label: "Solutions" },
-    { href: "#work", label: "Work" },
-    { href: "#contact", label: "Contact" },
+    { href: "/features", label: "Features" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/demo", label: "Demo" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {

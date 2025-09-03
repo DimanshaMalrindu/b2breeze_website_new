@@ -17,9 +17,19 @@ export default function Footer() {
                 <div className="text-sm">
                     <h3 className="font-medium text-muted">Company</h3>
                     <ul className="mt-3 space-y-2">
-                        <li><Link href="#features" className="hover:text-foreground">Features</Link></li>
-                        <li><Link href="#solutions" className="hover:text-foreground">Solutions</Link></li>
-                        <li><Link href="#work" className="hover:text-foreground">Work</Link></li>
+                        <li><Link href="/features" className="hover:text-foreground">Features</Link></li>
+                        <li><Link href="/pricing" className="hover:text-foreground">Pricing</Link></li>
+                        <li><Link href="/demo" className="hover:text-foreground">Demo</Link></li>
+                        <li><Link href="/about" className="hover:text-foreground">About</Link></li>
+                        <li><Link href="/contact" className="hover:text-foreground">Contact</Link></li>
+                        <li><Link href="/blog" className="hover:text-foreground">Blog</Link></li>
+                    </ul>
+                </div>
+                <div className="text-sm">
+                    <h3 className="font-medium text-muted">Legal</h3>
+                    <ul className="mt-3 space-y-2">
+                        <li><Link href="/legal/privacy" className="hover:text-foreground">Privacy</Link></li>
+                        <li><Link href="/legal/terms" className="hover:text-foreground">Terms</Link></li>
                     </ul>
                 </div>
                 <div className="flex items-start md:justify-end gap-3">

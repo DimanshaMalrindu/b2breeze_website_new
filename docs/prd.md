@@ -39,7 +39,7 @@ Note: AI/ML support is implied by existing utilities (OCR, analysis, transcripti
 - Time on page and scroll depth for Home and Features.
 - Organic search impressions and clicks for top keywords.
 
-### 5) Information Architecture / Sitemap
+### 5) Information Architecture / Sitemap — Done
 
 - / (Home)
 - /features (All features overview)
