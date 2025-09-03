@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button } from "./ui/Button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { Events, trackEvent } from "@/lib/analytics";
 
 const links = [
     { href: "#features", label: "Features" },
@@ -14,6 +16,15 @@ const links = [
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const searchParams = useSearchParams();
+    const utm = searchParams.toString();
+    const appBase = process.env.NEXT_PUBLIC_APP_URL || "/app";
+    const appHref = (() => {
+        if (!utm) return appBase;
+        const hasQuery = appBase.includes("?");
+        const joiner = hasQuery ? "&" : "?";
+        return `${appBase}${joiner}${utm}`;
+    })();
     return (
         <header className="sticky top-0 z-50">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
@@ -31,7 +42,13 @@ export default function Navbar() {
                     </nav>
                     <div className="hidden md:block">
                         <Button asChild variant="primary">
-                            <Link href="#contact">Get started</Link>
+                            <Link
+                                href={appHref}
+                                aria-label="Try Free"
+                                onClick={() => trackEvent(Events.CTA_CLICK, { label: "try_free", location: "navbar" })}
+                            >
+                                Try Free
+                            </Link>
                         </Button>
                     </div>
                     <button className="md:hidden p-2 rounded hover:bg-white/5" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
@@ -48,7 +65,16 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Button asChild variant="primary" className="mt-2">
-                            <Link href="#contact" onClick={() => setOpen(false)}>Get started</Link>
+                            <Link
+                                href={appHref}
+                                onClick={() => {
+                                    setOpen(false);
+                                    trackEvent(Events.CTA_CLICK, { label: "try_free", location: "navbar_mobile" });
+                                }}
+                                aria-label="Try Free"
+                            >
+                                Try Free
+                            </Link>
                         </Button>
                     </div>
                 </div>

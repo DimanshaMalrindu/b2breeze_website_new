@@ -1,6 +1,6 @@
 ## B2Breeze Marketing Website — Product Requirements Document (PRD)
 
-### 1) Overview
+### 1) Overview — Done
 
 - Product: B2Breeze — “Business, as smooth as a breeze.”
 - Purpose: Create a marketing website that clearly communicates value, showcases features, drives conversions (trial/demo signups), and links to the existing web app.
@@ -9,7 +9,7 @@
   - Capture leads (email/demo), encourage trial.
   - Provide social/shareable content and SEO landing pages.
 
-### 2) Target Audience & Positioning
+### 2) Target Audience & Positioning — Done
 
 - Audience: Solo operators, SMB teams, and sales/marketing pros who need lightweight tooling to capture leads, manage contacts, plan tasks/campaigns, and generate invoices.
 - Positioning: All‑in‑one business workflow hub combining OCR, contact management, analytics, and automation—fast, simple, privacy‑conscious.
@@ -19,7 +19,7 @@
   - Unified customer directory, tasks, campaigns, and invoicing in one place.
   - Insights and summaries with AI (transcription, analysis, and smart follow‑ups).
 
-### 3) Key Features (from current app)
+### 3) Key Features (from current app) — Done
 
 1. Business Card Scanner (OCR)
 2. Business Card Wallet (organized storage)
@@ -32,7 +32,7 @@
 
 Note: AI/ML support is implied by existing utilities (OCR, analysis, transcription). Avoid over‑promising; describe as “AI‑assisted.”
 
-### 4) Success Metrics
+### 4) Success Metrics — Done
 
 - Conversion rate to “Try Free” or “Request Demo.”
 - Contact form submissions/newsletter signups.
