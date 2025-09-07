@@ -4,6 +4,10 @@ import { KeyFeatures } from "@/components/sections/KeyFeatures";
 import { Contact } from "@/components/sections/Contact";
 import { TargetAudiencePositioning } from "@/components/sections/TargetAudiencePositioning";
 import { Suspense } from "react";
+import { SocialProof } from "@/components/sections/SocialProof";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { CTABand } from "@/components/sections/CTABand";
+import DemoModal from "@/components/DemoModal";
 
 export default function Home() {
   return (
@@ -27,11 +31,16 @@ export default function Home() {
         </div>
       </section>
       <TargetAudiencePositioning />
-      {/* Placeholder anchor for demo modal/section */}
-      <section id="demo" className="sr-only" aria-hidden>
-        Demo placeholder
-      </section>
+      {/* Demo modal activated via #demo anchor */}
+      <Suspense fallback={null}>
+        <DemoModal />
+      </Suspense>
+      <SocialProof />
       <KeyFeatures />
+      <HowItWorks />
+      <Suspense fallback={null}>
+        <CTABand />
+      </Suspense>
       <Features />
       <Contact />
     </>

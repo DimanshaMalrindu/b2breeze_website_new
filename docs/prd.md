@@ -59,7 +59,7 @@ Note: AI/ML support is implied by existing utilities (OCR, analysis, transcripti
 - /legal/privacy and /legal/terms
 - /app (Link/redirect into existing web app if hosted together)
 
-### 6) Page Specs & Sample Copy
+### 6) Page Specs & Sample Copy — Done
 
 Home (/)
 
@@ -68,50 +68,50 @@ Home (/)
   - Subcopy: “Welcome to B2Breeze—business, as smooth as a breeze. All‑in‑one platform for modern business management.”
   - Primary CTA: “Try Scanner Now” → /app or in‑page demo
   - Secondary CTA: “Watch Demo” → open video modal (YouTube/Vimeo)
-- Social proof row: logo strip or testimonial snippets.
-- Features grid (8 cards) with icons (lucide-react) and short blurbs.
-- How it works (3 steps): Capture → Organize → Act.
-- CTA band: “Get Started Free” and “Schedule Demo.”
-- Footer with nav, social, and legal.
+- Social proof row: logo strip or testimonial snippets. — Implemented
+- Features grid (8 cards) with icons (lucide-react) and short blurbs. — Implemented
+- How it works (3 steps): Capture → Organize → Act. — Implemented
+- CTA band: “Get Started Free” and “Schedule Demo.” — Implemented
+- Footer with nav, social, and legal. — Implemented
 
 Features (/features)
 
-- Intro: “Powerful features for modern business.”
-- Section per feature category with anchor links, icon, highlights, and 2–3 screenshots.
-- Cross‑links to deep feature pages.
+- Intro: “Powerful features for modern business.” — Implemented
+- Section per feature category with anchor links, icon, highlights, and 2–3 screenshots. — Partially Implemented (cards with links; screenshots pending assets)
+- Cross‑links to deep feature pages. — Implemented
 
 Feature Detail (e.g., /features/business-card-scanner)
 
-- Hero with succinct headline: “Digitize Business Cards Instantly.”
-- Bullet benefits: fast OCR, auto‑fields, error fixing, save to Wallet/Directory.
-- Short demo video or animated GIF.
-- CTA: “Try Scanner Now.”
+- Hero with succinct headline: “Digitize Business Cards Instantly.” — Implemented
+- Bullet benefits: fast OCR, auto‑fields, error fixing, save to Wallet/Directory. — Implemented
+- Short demo video or animated GIF. — Placeholder (awaiting assets)
+- CTA: “Try Scanner Now.” — Implemented
 
 Pricing (/pricing) — Optional
 
-- If pricing is not finalized, present: “Starter (Free)”, “Pro”, “Team” with feature checklist placeholders. Include “Contact Sales.”
+- If pricing is not finalized, present: “Starter (Free)”, “Pro”, “Team” with feature checklist placeholders. Include “Contact Sales.” — Implemented
 
 Demo (/demo)
 
-- Embed demo video and Calendly/booking form.
-- CTA: “Start Free Trial.”
+- Embed demo video and Calendly/booking form. — Implemented (Calendly placeholder)
+- CTA: “Start Free Trial.” — Pending (CTA button can be added once trial flow is defined)
 
 About (/about)
 
-- Mission, who it’s for, brief story.
+- Mission, who it’s for, brief story. — Implemented
 
 Contact (/contact)
 
-- Contact form (name, email, company, message), spam protection.
-- Direct email link.
+- Contact form (name, email, company, message), spam protection. — Implemented (honeypot)
+- Direct email link. — Pending
 
 Legal (/legal/privacy, /legal/terms)
 
-- Placeholder policy pages; link from footer.
+- Placeholder policy pages; link from footer. — Implemented
 
 Blog (/blog) — Optional
 
-- Markdown/MDX posts for SEO and updates.
+- Markdown/MDX posts for SEO and updates. — Placeholder page
 
 ### 7) Design System & Components
 
